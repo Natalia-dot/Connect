@@ -1,7 +1,7 @@
-# This is our final project for NEOLAND
-I think we have our teachers Pedro Lerida Nieto and Laura Sanchez Gonzalez <br>
-to thank for the immense help and guidance they've provided us with. <br>
-Needless to say, that we are all absolutely grateful for the opportunity<br>
-to meet fellow programmers and for having given our life a 360, with the help <br>
-of our teammates and families. 
-You can check the displayed project <a href='https://connect-a-mate.vercel.app/'>here</a>.
+# Final fullstack project
+This is a fullstack project with front and back. The backend is made with nodeJS 
+and the frontend with REACT.
+It implements user verification and authentication with JSON web token;
+it makes use of UI libraries, amongst them styled Components and sweetAlert, emotion and MUI.
+It implements a mapping and coordinate system to show the approximate location for the properties, making
+use of 'leaflet' to show maps with markers, taking advantage of the familiarity.
