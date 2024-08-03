@@ -1,0 +1,35 @@
+{
+    "routes": [
+        { "src": "/", "dest": "/" },
+        { "src": "/about", "dest": "/" },
+        { "src": "/register", "dest": "/" },
+        { "src": "/register/complete", "dest": "/" },
+        { "src": "/login", "dest": "/" },
+        { "src": "/verifyCode", "dest": "/" },
+        { "src": "/forgotpassword", "dest": "/" },
+        { "src": "/roomSearch", "dest": "/" },
+        { "src": "/roomFinds/:id", "dest": "/" },
+        { "src": "/feed", "dest": "/" },
+        { "src": "/feed/:id", "dest": "/" },
+        { "src": "/verifyCode", "dest": "/" },
+        { "src": "/createRoom", "dest": "/" },
+        { "src": "/createRoom/:id", "dest": "/" },
+        { "src": "/updateRoom/:id", "dest": "/" },
+        { "src": "/createPost", "dest": "/" },
+        { "src": "/updatePost/:id", "dest": "/" },
+        { "src": "/messages", "dest": "/" },
+        { "src": "/user/:username", "dest": "/" },
+        { "src": "/user/:username/posts", "dest": "/" },
+        { "src": "/user/:username/rooms", "dest": "/" },
+        { "src": "/user/:username/reviews", "dest": "/" },
+        { "src": "/profile/mobile/posts", "dest": "/" },
+        { "src": "/profile/mobile/rooms", "dest": "/" },
+        { "src": "/profile/mobile/reviews", "dest": "/" },
+        { "src": "/profile/mobile/bookmarks", "dest": "/" },
+        { "src": "/profile", "dest": "/" },
+        { "src": "/profile/edit", "dest": "/" },
+        { "src": "/profile/settings", "dest": "/" },
+        { "src": "/[^.]+", "dest": "/", "status": 200 }
+
+    ]
+  }
