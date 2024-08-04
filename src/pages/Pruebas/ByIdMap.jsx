@@ -4,11 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import './pruebas.css'
 import { postcodes } from '../../../data/noAbrirElArchivoEsDemasiadoLargo/shortPostcodes';
 
-var icon = L.icon({
-  iconUrl: 'map-marker-512.png',
-
-  iconSize:     [38, 95], // size of the icon
-});
+L.Marker.prototype.options.imagePath = '/public/map-marker-512.png'
 
 export const ByIdMap = ({ postcode, province, ccaa }) => {
 // console.log(province, ccaa, postcode)
@@ -40,12 +36,12 @@ export const ByIdMap = ({ postcode, province, ccaa }) => {
         });
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '© OpenStreetMap contributors',
-        }, {icon: icon}).addTo(map);
+        }).addTo(map);
         mapRef.current = map;
         const marker = L.marker([
           parseFloat(postcodes[ccaa][province][postcode].latitude),
           parseFloat(postcodes[ccaa][province][postcode].longitude),
-        ], {icon: icon}).addTo(map);
+        ]).addTo(map);
         markerRef.current = marker;
       } else {
         centerMap(); // Center the map if it already exists
