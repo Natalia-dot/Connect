@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import './pruebas.css'
 import { postcodes } from '../../../data/noAbrirElArchivoEsDemasiadoLargo/shortPostcodes';
 
-L.Marker.prototype.options.imagePath = '/public/map-marker-512.png'
+L.Marker.prototype.options.icon.imagePath = '/public/map-marker-512.png'
 
 export const ByIdMap = ({ postcode, province, ccaa }) => {
 // console.log(province, ccaa, postcode)
