@@ -398,7 +398,7 @@ export const PostById = () => {
                         style={{ width: "20vw", objectFit: "cover" }}
                         src={
                           res?.data?.preferredGender == "male"
-                            ? "https://www.flaticon.com/free-icon/boy_1999625"
+                            ? "https://cdn-icons-png.flaticon.com/512/4042/4042356.png"
                             : "https://cdn-icons-png.flaticon.com/128/6997/6997662.png"
                         }
                         alt="preferred gender image"
