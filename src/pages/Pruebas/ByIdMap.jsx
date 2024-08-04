@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import './pruebas.css'
 import { postcodes } from '../../../data/noAbrirElArchivoEsDemasiadoLargo/shortPostcodes';
+import { myIcon } from '../../utils/myIcon';
 
-L.Icon.Default.imagePath = '/public/map-marker-512.png'
 
 export const ByIdMap = ({ postcode, province, ccaa }) => {
 // console.log(province, ccaa, postcode)
@@ -41,7 +41,7 @@ export const ByIdMap = ({ postcode, province, ccaa }) => {
         const marker = L.marker([
           parseFloat(postcodes[ccaa][province][postcode].latitude),
           parseFloat(postcodes[ccaa][province][postcode].longitude),
-        ]).addTo(map);
+        ], {icon: myIcon}).addTo(map);
         markerRef.current = marker;
       } else {
         centerMap(); // Center the map if it already exists

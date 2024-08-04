@@ -26,6 +26,7 @@ import { postcodes } from "../../../data/noAbrirElArchivoEsDemasiadoLargo/shortP
 import { useAuth } from "../../context/authContext";
 import { useUserVerify } from "../../hooks/useUserVerify";
 import { useCanUserPost } from "../../hooks/useCanUserPost";
+import { myIcon } from "../../utils/myIcon";
 
 
 //<!--IMP                     Component                            -->
@@ -158,7 +159,7 @@ const { postId } = useParams()
           const marker = L.marker([
             parseFloat(postcodes[publicLocation][province][postcode].latitude),
             parseFloat(postcodes[publicLocation][province][postcode].longitude),
-          ]).addTo(map);
+          ], {icon: myIcon}).addTo(map);
           markerRef.current = marker;
         } else {
           // esto se hace si SI hay mapRef.current, que es settear la vista, es decir, actualizar la vista del mapa

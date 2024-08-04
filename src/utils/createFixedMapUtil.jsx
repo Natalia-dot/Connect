@@ -1,5 +1,6 @@
 import L from "leaflet"
 import { postcodes } from "../../data/noAbrirElArchivoEsDemasiadoLargo/shortPostcodes";
+import { myIcon } from "./myIcon";
 
 
 export const createFixedMapUtil = (mapRef, markerRef, province, postcode) => {
@@ -12,7 +13,7 @@ export const createFixedMapUtil = (mapRef, markerRef, province, postcode) => {
         attribution: '© OpenStreetMap contributors'
       }).addTo(map);
       mapRef.current = map;
-      const marker = L.marker([parseFloat(postcodes[province][postcode].latitude), parseFloat(postcodes[province][postcode].longitude)])
+      const marker = L.marker([parseFloat(postcodes[province][postcode].latitude), parseFloat(postcodes[province][postcode].longitude)], {icon: myIcon})
         .addTo(map);
       markerRef.current = marker;
 
