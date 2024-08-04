@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import './pruebas.css'
 import { postcodes } from '../../../data/noAbrirElArchivoEsDemasiadoLargo/shortPostcodes';
-import { myIcon } from '../../utils/myIcon';
+import {Icon} from "leaflet"
 
+
+ const myIcon =  new Icon({ iconUrl : '/map-marker-512.png', iconSize:[40, 40] })
 
 export const ByIdMap = ({ postcode, province, ccaa }) => {
 // console.log(province, ccaa, postcode)
