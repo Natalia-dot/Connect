@@ -1,6 +1,12 @@
 import L from "leaflet"
 import { postcodes } from "../../data/noAbrirElArchivoEsDemasiadoLargo/shortPostcodes";
 
+var icon = L.icon({
+  iconUrl: 'map-marker-512.png',
+
+  iconSize:     [38, 95], // size of the icon
+});
+
 export const createFixedMapUtil = (mapRef, markerRef, province, postcode) => {
     if (!mapRef.current) {
       const map = L.map('map', {
@@ -9,9 +15,9 @@ export const createFixedMapUtil = (mapRef, markerRef, province, postcode) => {
       });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
+      }, {icon: icon}).addTo(map);
       mapRef.current = map;
-      const marker = L.marker([parseFloat(postcodes[province][postcode].latitude), parseFloat(postcodes[province][postcode].longitude)])
+      const marker = L.marker([parseFloat(postcodes[province][postcode].latitude), parseFloat(postcodes[province][postcode].longitude)], {icon: icon})
         .addTo(map);
       markerRef.current = marker;
 

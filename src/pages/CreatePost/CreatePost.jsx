@@ -27,6 +27,12 @@ import { useAuth } from "../../context/authContext";
 import { useUserVerify } from "../../hooks/useUserVerify";
 import { useCanUserPost } from "../../hooks/useCanUserPost";
 
+var icon = L.icon({
+  iconUrl: 'map-marker-512.png',
+
+  iconSize:     [38, 95], // size of the icon
+});
+
 //<!--IMP                     Component                            -->
 export const CreatePost = () => {
   const isMobile = window.innerWidth < 1050 ? true : false;
@@ -134,7 +140,7 @@ export const CreatePost = () => {
           //esto es solamente la atribucion a leaflet, gracias leaflet <3
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: "© OpenStreetMap contributors",
-          }).addTo(map);
+          }, {icon: icon}).addTo(map);
 
           // guardamos la instancia del mapa en el current mapRef, para poder juzgar despues si hay que crear
           //una nueva instancia o solo modificar el mapa que ya hay
@@ -147,7 +153,7 @@ export const CreatePost = () => {
           const marker = L.marker([
             parseFloat(postcodes[publicLocation][province][postcode].latitude),
             parseFloat(postcodes[publicLocation][province][postcode].longitude),
-          ]).addTo(map);
+          ], {icon: icon}).addTo(map);
           markerRef.current = marker;
         } else {
           // esto se hace si SI hay mapRef.current, que es settear la vista, es decir, actualizar la vista del mapa
